@@ -11,6 +11,19 @@ interface ConvertRequest {
   text: string;
 }
 
+app.use((req, res, next) => {
+  res.setHeader("X-Powered-By", "ABDALGOLABS - ABDNAHID");
+  next();
+});
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Bangla Converter API",
+    organization: "ABDALGOLABS",
+    developer: "ABDNAHID",
+  });
+});
+
 app.post(
   "/to-unicode",
   (req: Request<{}, {}, ConvertRequest>, res: Response) => {

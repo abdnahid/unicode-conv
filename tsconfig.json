@@ -2,11 +2,12 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    "rootDir": "./src",
+    "declaration": true,
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
-    "declaration": true  // Important for npm packages (generates .d.ts files)
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/server.ts"]
 }

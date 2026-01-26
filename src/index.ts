@@ -1,2 +1,2 @@
 // src/index.ts
-export { bijoyToUnicode, unicodeToBijoy } from './core';
+export { bijoyToUnicode, unicodeToBijoy, isUnicode } from "./core";

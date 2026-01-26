@@ -1,27 +1,41 @@
 {
-  "name": "uni2bijoy",
+  "name": "@abdalgolabs/ansi-unicode-converter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Professional Bengali ANSI to Unicode and Unicode to ANSI converter by ABDNAHID",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "ABDNAHID <abdalgolabs@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-  "build": "tsc",
-  "start": "node dist/server.js",
-  "dev": "ts-node src/server.js",
-  "prepublishOnly": "npm run build"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "bangla",
+    "bengali",
+    "bijoy",
+    "ansi",
+    "unicode",
+    "converter"
+  ],
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.0.3",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.2.1"
+    "express": "^5.0.0"
   }
 }
