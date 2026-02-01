@@ -20,9 +20,12 @@ This package is designed to work in Node.js environments, browser-based projects
 
 ```bash
 npm install @abdalgolabs/ansi-unicode-converter
-Usage
-In Node.js / TypeScript
-TypeScript
+```
+
+## :hammer_and_wrench: Usage
+
+#### 1. In Node.js / TypeScript
+```
 import { bijoyToUnicode, unicodeToBijoy, isUnicode } from '@abdalgolabs/ansi-unicode-converter';
 
 // Convert Bijoy to Unicode
@@ -38,40 +41,44 @@ console.log(ansiResult); // Avgvi †mvbvi evsjv
 // Check if text is already Unicode
 console.log(isUnicode("Hello")); // false
 console.log(isUnicode("আমার")); // true
+```
 
-Usage in Microsoft Excel
+#### 2. Usage in Microsoft Excel
 You can use this package as a live API to convert cells in Excel.
-1. For Bijoy to Unicode
-Paste this formula in a cell (Replace YOUR_URL with your Vercel deployment link):
-Excel
-=WEBSERVICE("https://YOUR_URL.vercel.app/api/convert?type=b2u&text=" & ENCODEURL(A1))
-2. For Unicode to Bijoy
-Excel
-=WEBSERVICE("https://YOUR_URL.vercel.app/api/convert?type=u2b&text=" & ENCODEURL(A1))
-Note: For the result to look like Bangla, you must change the cell font to SutonnyMJ.
+Paste the following formula in a cell (Replace YOUR_URL with your Vercel deployment link):
 
-API Endpoints
+- [x] For Bijoy to Unicode
+
+In Excel
+```
+=WEBSERVICE("https://YOUR_URL.vercel.app/api/convert?type=b2u&text=" & ENCODEURL(A1))
+```
+- [x] For Unicode to Bijoy
+
+In Excel
+
+```
+=WEBSERVICE("https://YOUR_URL.vercel.app/api/convert?type=u2b&text=" & ENCODEURL(A1))
+```
+ Note: For the result to look like Bangla, you must change the cell font to SutonnyMJ.
+
+## :globe_with_meridians: API Endpoints
+
+| Method | Endpoint | body |details|
+| ---- | ------ | --------------- |---|
+| GET | /api/convert?type=b2u&text=your_bijoy_text |:no_entry_sign:|Converts your bijoy formatted texts to unicode|
+| GET | /api/convert?type=u2b&text=your_unicode_text |:no_entry_sign:|Converts your unicode formatted texts to bijoy|
+| POST | /to-unicode | JSON Body: { "text": "your ansi/bijoy text"}|Converts your bijoy formatted texts to unicode|
+| POST | /to-ansi | JSON Body: { "text": "your unicode text" }|Converts your unicode formatted texts to bijoy|
+
 If you deploy the included server.ts, you get the following endpoints:
 Technical Details
 This converter handles complex Bengali linguistic rules, including:
 Rearranging "Kar" (ে, ি, ৈ) positions.
 Handling "Reph" (র্) and "Ro-fola" (্র) logic.
 Correcting common conjuncts (যুক্তবর্ণ).
-License
+## :balance_scale: License
 MIT © ABDALGOLABS
 Developed by ABDNAHID
 
-### Why this README is effective:
-1.  **Badges**: It uses shields.io badges at the top which makes the package look official.
-2.  **Usage Examples**: It shows both TypeScript and Excel examples, covering both your use cases.
-3.  **Table of Contents**: It clearly defines what the API does.
-4.  **Scoped Branding**: It emphasizes **ABDALGOLABS** and **ABDNAHID** as the authors.
 
-
-
-### Final Step:
-1.  Save this as `README.md`.
-2.  `git add README.md`
-3.  `git commit -m "docs: add professional readme"`
-4.  `git push origin main`
-5.  **Publish again**: `npm version patch` then `npm publish`. (NPM requires a version bump li
