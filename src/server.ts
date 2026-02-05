@@ -1,7 +1,7 @@
 // src/server.ts
 import express, { Request, Response } from "express";
 import cors from "cors";
-import { bijoyToUnicode, isUnicode, unicodeToBijoy } from "./core";
+import { bijoyToUnicode, convertMixedToUnicode, isUnicode, unicodeToBijoy } from "./core";
 
 const app = express();
 app.use(cors());
@@ -22,6 +22,13 @@ app.get("/", (req, res) => {
     organization: "ABDALGOLABS",
     developer: "ABDNAHID",
   });
+});
+app.get('/api/convert-mixed', (req, res) => {
+    const { text } = req.query;
+    if (!text) return res.status(400).send("Missing text");
+    
+    const converted = convertMixedToUnicode(text.toString());
+    res.send(converted);
 });
 
 app.post(

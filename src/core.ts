@@ -324,3 +324,33 @@ export function isUnicode(text: string): boolean {
   const unicodePattern = /[\u0980-\u09FF]/;
   return unicodePattern.test(text);
 }
+
+export function convertMixedToUnicode(text: string): string {
+    if (!text) return "";
+
+    // Split by spaces to evaluate chunks
+    const words = text.split(/(\s+)/); // Preserves spaces for perfect reconstruction
+
+    return words.map(word => {
+        // 1. Skip if it's just whitespace
+        if (word.trim().length === 0) return word;
+
+        // 2. Check if the word contains Unicode Bengali characters
+        // If it's already Unicode, return it untouched
+        if (isUnicode(word)) {
+            return word;
+        }
+
+        // 3. Check if it contains ASCII/ANSI characters commonly used in Bijoy
+        // We only convert if it looks like Bijoy (contains common Bijoy characters)
+        // Adjust the regex based on your b2u character map
+        const looksLikeBijoy = /[A-Za-z|†|‡|¶|¡]/.test(word);
+
+        if (looksLikeBijoy) {
+            return bijoyToUnicode(word);
+        }
+
+        // 4. If it's English/Numbers and not Bijoy, return as is
+        return word;
+    }).join('');
+}
