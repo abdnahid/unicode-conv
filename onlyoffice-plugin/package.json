@@ -1,0 +1,15 @@
+{
+  "name": "bangla-converter-onlyoffice-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ONLYOFFICE spreadsheet plugin for Bengali Bijoy (ANSI) <-> Unicode conversion by ABDNAHID",
+  "author": "ABDNAHID <abdalgolabs@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "install-plugin": "node scripts/install.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

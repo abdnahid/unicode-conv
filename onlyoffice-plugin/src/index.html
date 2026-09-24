@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bangla Converter</title>
+    <script src="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js"></script>
+    <script src="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins-ui.js"></script>
+    <link rel="stylesheet" href="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.css" />
+    <link rel="stylesheet" href="panel.css" />
+    <script src="converter.js"></script>
+    <script src="library.js"></script>
+    <script src="panel.js"></script>
+  </head>
+  <body>
+    <main>
+      <p class="hint">Select cells, then convert them in place. Formula cells are left untouched.</p>
+
+      <div class="actions">
+        <button id="to-ansi" class="btn-text-default">Unicode → Bijoy (ANSI)</button>
+        <button id="to-unicode" class="btn-text-default">Bijoy (ANSI) → Unicode</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section>
+        <h2>Options</h2>
+        <label class="check">
+          <input type="checkbox" id="change-font" />
+          Change the font of converted cells
+        </label>
+        <label class="field">
+          Bijoy font
+          <input type="text" id="ansi-font" class="form-control" spellcheck="false" />
+        </label>
+        <label class="field">
+          Unicode font
+          <input type="text" id="unicode-font" class="form-control" spellcheck="false" />
+        </label>
+        <label class="check">
+          <input type="checkbox" id="only-bijoy-font" />
+          Only convert cells in a Bijoy (…MJ) font when converting to Unicode
+        </label>
+        <p class="hint">Bijoy text is made of English letters, so without this, English cells in the selection would be garbled.</p>
+      </section>
+
+      <section>
+        <h2>Formulas</h2>
+        <p><code>=TOANSI(A1)</code>: Unicode → Bijoy</p>
+        <p><code>=TOUNICODE(A1)</code>: Bijoy → Unicode</p>
+        <p id="formula-status" class="hint"></p>
+      </section>
+    </main>
+  </body>
+</html>

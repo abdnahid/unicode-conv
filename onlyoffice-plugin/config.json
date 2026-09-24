@@ -1,0 +1,41 @@
+{
+  "name": "Bangla Converter",
+  "guid": "asc.{B33332B5-3AB7-4EB2-8E26-5B90E3ECFAA1}",
+  "version": "1.0.0",
+  "minVersion": "8.1.0",
+  "offered": "ABDALGOLABS",
+  "variations": [
+    {
+      "description": "Convert Bengali text between Bijoy (ANSI) and Unicode",
+      "url": "index.html",
+      "icons": ["resources/light/icon.png", "resources/light/icon@2x.png"],
+      "icons2": [
+        {
+          "style": "light",
+          "100%": { "normal": "resources/light/icon.png" },
+          "125%": { "normal": "resources/light/icon@1.25x.png" },
+          "150%": { "normal": "resources/light/icon@1.5x.png" },
+          "175%": { "normal": "resources/light/icon@1.75x.png" },
+          "200%": { "normal": "resources/light/icon@2x.png" }
+        },
+        {
+          "style": "dark",
+          "100%": { "normal": "resources/dark/icon.png" },
+          "125%": { "normal": "resources/dark/icon@1.25x.png" },
+          "150%": { "normal": "resources/dark/icon@1.5x.png" },
+          "175%": { "normal": "resources/dark/icon@1.75x.png" },
+          "200%": { "normal": "resources/dark/icon@2x.png" }
+        }
+      ],
+      "isViewer": false,
+      "EditorsSupport": ["cell"],
+      "type": "panel",
+      "isVisual": true,
+      "isModal": false,
+      "isInsideMode": true,
+      "initDataType": "none",
+      "initData": "",
+      "buttons": []
+    }
+  ]
+}
